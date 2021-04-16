@@ -2,6 +2,7 @@
 The dataset we are using for this project is collected and compiled by Tom Davidson, which contains 24k tweets that are labeled as hate speech, offensive language, or neither.  The original dataset can be accessed from [here](https://data.world/thomasrdavidson/hate-speech-and-offensive-language).
 
 ## Files
+We splited the original dataset into train dataset, development dataset, and test dataset:
 - `train.csv`: 0.8
 - `dev.csv`: 0.1
 - `test.csv`: 0.1
