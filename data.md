@@ -15,6 +15,15 @@ We splited the original dataset into train dataset, development dataset, and tes
 - `class`: class label for majority of CF users.
 - `tweet`: Original tweets
 
+## An Example of the data
+
+| Count  | hate_speech | offensive_language | neither | class | tweet
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+|6	|1 | 5	|0|	1|	@Daa_Boy_Rell @sluttyboy_kush @keem_Escobar you. A bitch too | 
+|3|	0|	1|	2|	2|	Harlem World trash? Interesting.|
+|3|	0|	3|	0|	1|	RT @GaryLopez_19: I'm gonna make this math test my bitch tomorrow.|
+
+
 ## Dataset Reference
 ```
 @inproceedings{hateoffensive, 
