@@ -21,3 +21,9 @@ The highest possible value of an F1 score is 1.0, which represents perfect preci
 The lowest possible value is 0, this will occur if either the precision or the recall is zero.
 
 **For this scoring metric, a higher score would be better.**
+
+## To run the evaluation script, simply run
+
+**python score.py**
+
+And the f1 score of the test dataset would be printed to the terminal.
