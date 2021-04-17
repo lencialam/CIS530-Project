@@ -24,6 +24,6 @@ The lowest possible value is 0, this will occur if either the precision or the r
 
 ## To run the evaluation script, simply run:
 
-**python score.py**
+`python score.py`
 
 And the F1 score of the test dataset would be printed to the terminal.
