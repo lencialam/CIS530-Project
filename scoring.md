@@ -22,8 +22,8 @@ The lowest possible value is 0, this will occur if either the precision or the r
 
 **For this scoring metric, a higher score would be better.**
 
-## To run the evaluation script, simply run
+## To run the evaluation script, simply run:
 
 **python score.py**
 
-And the f1 score of the test dataset would be printed to the terminal.
+And the F1 score of the test dataset would be printed to the terminal.
