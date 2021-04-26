@@ -20,9 +20,9 @@ We use a simple Logistic Regression model with basic text preprocessing as our b
 ## Score
 
 ### Development Set
-The baseline development f1 score is: 0.8343100692594566
+The baseline development f1 score is: 0.6973461195361285
 
 ### Test Set
-The baseline testing f1 score is: 0.8608365019011408
+The baseline testing f1 score is: 0.7120737909657228
 
 ## Referenced Paper

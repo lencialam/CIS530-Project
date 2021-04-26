@@ -1,37 +1,32 @@
 # Dataset Description
-The dataset we are using for this project is collected and compiled by Tom Davidson, which contains 24k tweets that are labeled as hate speech, offensive language, or neither.  The original dataset can be accessed from [here](https://data.world/thomasrdavidson/hate-speech-and-offensive-language).
+We are using [the Offensive Language Identification Dataset (OLID)](https://sites.google.com/site/offensevalsharedtask/olid), which contains a collection of 14,200 annotated English tweets using an annotation model. 
 
 ## Files
-We splited the original dataset into train dataset, development dataset, and test dataset:
-- `train.csv`: 0.8
-- `dev.csv`: 0.1
-- `test.csv`: 0.1
+We extracted columns from the provided training and testing dataset. Then, we splited the extracted training set into train dataset and development dataset by 9:1. The number of entries in each file is shown below:
+- `train.csv`: 11916 entries
+- `dev.csv`: 1324 entries
+- `test.csv`: 860 entries
 
 ## Columns
-- `count`: number of CrowdFlower users who coded each tweet. 
-- `hate_speech`: number of CF users who judged the tweet to be hate speech.
-- `offensive_language`: umber of CF users who judged the tweet to be offensive.
-- `neither`: number of CF users who judged the tweet to be neither offensive nor non-offensive.
-- `class`: class label for majority of CF users.
 - `tweet`: Original tweets
+- `class`: Label of a tweet. There are 2 categories: 
+	- 1 (NOT) Not Offensive - This post does not contain offense or profanity.
+	- 0 (OFF) Offensive - This post contains offensive language or a targeted (veiled or direct) offense.
 
 ## An Example of the data
 
-| Count  | hate_speech | offensive_language | neither | class | tweet
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|6	|1 | 5	|0|	1|	@Daa_Boy_Rell @sluttyboy_kush @keem_Escobar you. A bitch too | 
-|3|	0|	1|	2|	2|	Harlem World trash? Interesting.|
-|3|	0|	3|	0|	1|	RT @GaryLopez_19: I'm gonna make this math test my bitch tomorrow.|
-
+| tweet | class 
+| ------------- | ------------- 
+|@USER She should ask a few native Americans what their take on this is. | 0
+|@USER @USER Go home you’re drunk!!! @USER #MAGA #Trump2020 👊🇺🇸👊 URL|	0
+|Amazon is investigating Chinese employees who are selling internal data to third-party sellers looking for an edge in the competitive marketplace. URL #Amazon #MAGA #KAG #CHINA #TCOT| 1
 
 ## Dataset Reference
 ```
-@inproceedings{hateoffensive, 
-    title={Automated Hate Speech Detection and the Problem of Offensive Language}, 
-    author={Davidson, Thomas and Warmsley, Dana and Macy, Michael and Weber, Ingmar}, 
-    booktitle={Proceedings of the 11th International AAAI Conference on Weblogs and Social Media}, 
-    series={ICWSM '17}, 
-    year={2017}, 
-    location = {Montreal, Canada} 
-}
+@inproceedings{zampierietal2019, 
+title={{Predicting the Type and Target of Offensive Posts in Social Media}}, 
+author={Zampieri, Marcos and Malmasi, Shervin and Nakov, Preslav and Rosenthal, Sara and Farra, Noura and Kumar, Ritesh}, 
+booktitle={Proceedings of NAACL}, 
+year={2019}, 
+} 
 ```

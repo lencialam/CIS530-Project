@@ -1,6 +1,6 @@
 # Evaluation Metric
 
-## We decided to use F1 score to evalutate the performance of our classifiers.
+## We decided to use macro-averaged F1 score to evalutate the performance of our classifiers.
 
 The usual metrics for evaulating text classification task use the confusion matrix, which is a specific table layout that allows visualization of the performance of an model and makes it very easy and straightforward to see which labels are being misclassified and if our classifier is returning the correct label or not. 
 

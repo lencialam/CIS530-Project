@@ -61,7 +61,7 @@ if __name__ == "__main__":
     with open("dev_preds.txt", "w") as f:
         f.write("\n".join(map(str, dev_preds)))
     # Print the fscore
-    dev_fscore = f1_score(dev_labels, dev_preds)
+    dev_fscore = f1_score(dev_labels, dev_preds, average='macro')
     print("The baseline development f1 score is:", dev_fscore)
     print(classification_report(dev_labels, dev_preds))
 
@@ -71,6 +71,6 @@ if __name__ == "__main__":
     with open("test_preds.txt", "w") as f:
         f.write("\n".join(map(str, test_preds)))
     # Print the fscore
-    test_fscore = f1_score(test_labels, test_preds)
+    test_fscore = f1_score(test_labels, test_preds, average='macro')
     print("The baseline testing f1 score is:", test_fscore)
     print(classification_report(test_labels, test_preds))
