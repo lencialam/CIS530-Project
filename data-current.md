@@ -2,7 +2,7 @@
 We are using [the Offensive Language Identification Dataset (OLID)](https://sites.google.com/site/offensevalsharedtask/olid), which contains a collection of 14,200 annotated English tweets using an annotation model. 
 
 ## Files
-We splited the original dataset into train dataset, development dataset, and test dataset:
+We splited the original train dataset into train dataset and development dataset:
 - `train.csv`: 0.8
 - `dev.csv`: 0.1
 - `test.csv`: 0.1
@@ -12,7 +12,7 @@ We splited the original dataset into train dataset, development dataset, and tes
 - `tweet`: Original tweets
 - `subtask_a`: Label of a tweet. There are 2 categories: 
 	- (NOT) Not Offensive - This post does not contain offense or profanity.
-	- (OFF) Offensive - This post contains offensive language or a targeted (veiled or direct) offense
+	- (OFF) Offensive - This post contains offensive language or a targeted (veiled or direct) offense.
 
 ## An Example of the data
 
