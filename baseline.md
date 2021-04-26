@@ -6,6 +6,7 @@ The goal for our model is to assign a label (0, 1) to a sentence to classify it 
 * pandas
 * scikit-learn
 * nltk
+* gensim
 
 ## Usage
 To run this baseline model:
@@ -20,10 +21,10 @@ We use a simple Logistic Regression model with basic text preprocessing as our b
 ## Score with CountVectorizer
 
 ### Development Set
-The baseline development f1 score is: 0.6973461195361285
+The baseline development f1 score is: 0.6968686741773813
 
 ### Test Set
-The baseline testing f1 score is: 0.7120737909657228
+The baseline testing f1 score is: 0.7155976554481942
 
 ## Score with Google Pretrained Word2Vec
 
