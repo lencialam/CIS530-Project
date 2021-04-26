@@ -4,20 +4,29 @@ from sklearn.metrics import f1_score
 
 if __name__ == "__main__":
     # Load train data
-    train = pd.read_csv('data/olid-training-v1.0.tsv', sep="\t")
-    train_data = train['tweet']
-    train_labels = pd.factorize(train['subtask_a'])[0]
-    majority = stats.mode(train_labels)[0][0]
+    train_df = pd.read_csv('data/train.csv')
+    train_data, train_labels = train_df["tweet"], train_df["class"]
+    majority = train_labels.mode()[0]
     print("Majority class is:", majority)   # OFF=0, NOT=1
 
-    # Load test data
-    test_data = pd.read_csv('data/testset-levela.tsv', sep="\t")['tweet']
-    test_labels = pd.factorize(pd.read_csv('data/labels-levela.csv', header=None).iloc[:,-1])[0]
-    # Test
+    # Evaluation with dev
+    dev_df = pd.read_csv('data/dev.csv')
+    dev_data, dev_labels = dev_df["tweet"], dev_df["class"]
+    dev_preds = [majority] * len(dev_data)
+    # Write to result file
+    with open("dev_preds.txt", "w") as f:
+        f.write("\n".join(map(str, dev_preds)))
+    # Print the fscore
+    dev_fscore = f1_score(dev_labels, dev_preds)
+    print("The simple baseline development f1 score is:", dev_fscore)
+
+    # Evaluation with test
+    test_df = pd.read_csv('data/test.csv')
+    test_data, test_labels = test_df["tweet"], test_df["class"]
     test_preds = [majority] * len(test_data)
     # Write to result file
     with open("test_preds.txt", "w") as f:
         f.write("\n".join(map(str, test_preds)))
     # Print the fscore
     test_fscore = f1_score(test_labels, test_preds)
-    print("The simple baseline f1 score is:", test_fscore)
+    print("The simple baseline testing f1 score is:", test_fscore)
