@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import CountVectorizer
+from gensim import downloader
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report
@@ -15,17 +15,27 @@ nltk.download('wordnet')
 stop_words = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
 
+w2v = downloader.load('word2vec-google-news-300')
+
 def preprocess(tweet):
     tweet = tweet.lower()
     tweet = re.sub("@user", "", tweet)
     tweet = re.sub(r"@[\w\-]+", "", tweet)
+    # tweet = re.sub(r"#[\w]+", " ", tweet)
     tweet = re.sub(r"[^A-Za-z]", " ", tweet)
     # remove url
     tweet = re.sub(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|''[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", "", tweet)
     tokens = tweet.split(" ")
     tokens = [lemmatizer.lemmatize(token) for token in tokens]
-    tokens = [token for token in tokens if not token in stop_words]
-    return " ".join(tokens)
+    tokens = [token for token in tokens if token and not token in stop_words]
+    embedding = np.zeros((300,))
+    if not tokens:
+        return embedding
+    for token in tokens:
+        if token in w2v:
+            embedding += w2v[token]
+    embedding / float((len(tokens)))
+    return embedding
 
 if __name__ == "__main__":
     # Load train data
@@ -39,17 +49,11 @@ if __name__ == "__main__":
     test_data, test_labels = test_df["tweet"], test_df["class"]
 
     # Creating the training corpus
-    train_data = train_data.apply(lambda x: preprocess(x))
+    X_train = pd.DataFrame(train_data.apply(lambda x: preprocess(x)).tolist())
     # Creating the development corpus
-    dev_data = dev_data.apply(lambda x: preprocess(x))
+    X_dev = pd.DataFrame(dev_data.apply(lambda x: preprocess(x)).tolist())
     # Creating the testing corpus
-    test_data = test_data.apply(lambda x: preprocess(x))
-
-    # Transform into vectorized features
-    vectorizer = CountVectorizer()
-    X_train = vectorizer.fit_transform(train_data)
-    X_dev = vectorizer.transform(dev_data)
-    X_test = vectorizer.transform(test_data)
+    X_test = pd.DataFrame(test_data.apply(lambda x: prsseprocess(x)).tolist())
 
     # Training
     classifier = LogisticRegression(max_iter=500)
