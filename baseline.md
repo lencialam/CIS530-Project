@@ -12,9 +12,17 @@ To run this baseline model:
 1. Download the needed data and store them in a folder named `data`.
 2. In the parent directory of `data`, run `python baseline.py`.
 3. On completion, it will print out the f1 score on testing set and generate a result file named `test_preds.txt`.
-4. You can also use `python score.py` to get the f1 score that compares this result file with the original labels.
+4. You can also use `python score.py` to get the testing f1 score that compares this result file with the original labels.
+
+## Model Description
+We use a simple Logistic Regression model with basic text preprocessing as our baseline.
 
 ## Score
-The F1 score for this published baseline is: 0.8599695585996956
+
+### Development Set
+The baseline development f1 score is: 0.8343100692594566
+
+### Test Set
+The baseline testing f1 score is: 0.8608365019011408
 
 ## Referenced Paper
