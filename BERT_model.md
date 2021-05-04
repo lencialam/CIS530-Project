@@ -17,13 +17,23 @@ To run this baseline model:
 ## Model Description
 We use a BERT model with BERT Tokenizer, padding and masking techniques.
 
-## Score with BERT model
+## Score with BERT model 
 
-### Development Set
-The baseline development f1 score is: 0.74
+optimizer = AdamW(model.parameters(),lr = 2e-5, eps = 1e-8)
+| optimizer | development | test
+| ------------- | ------------- | ------------- 
+|AdamW, lr = 1e-6, eps = 1e-8| 0.72 | 0.771(epoch=6)
+|AdamW, lr = 1e-6, eps = 1e-6| 0.74 | 0.774(epoch=6)
+|AdamW, lr = 1e-5, eps = 1e-8| 0.69 | 0.717(epoch=6)
+|AdamW, lr = 1e-5, eps = 1e-6 | 0.74 | 0.779
+|AdamW, lr = 1e-5, eps = 1e-4 | 0.75 | 0.779
+|AdamW, lr = 1e-4, eps = 1e-8 | 0.71 | 0.755
+|AdamW, lr = 1e-4, eps = 1e-6 | 0.71 | 0.734
+|AdamW, lr = 1e-4, eps = 1e-4 | 0.73 | 0.752
 
-### Test Set
-The baseline testing f1 score is: 0.772
+
+##Score with 1 epoch
+AdamW, lr = 1e-5, eps=1e-8, 0.72, 0.729
 
 
 ## Cite
