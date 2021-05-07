@@ -18,7 +18,8 @@ To run this baseline model:
 We use a BERT model with BERT Tokenizer, padding and masking techniques.
 
 ## Score with the BERT model
-
+The development f1 score is: 0.7340947516674741
+The testing f1 score is: 0.7917311135898011
 
 ## Parameter Tuning
 optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8)

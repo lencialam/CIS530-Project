@@ -2,7 +2,7 @@ import re
 import numpy as np
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
+from sklearn import svm
 from sklearn.metrics import f1_score
 from sklearn.metrics import classification_report
 
@@ -24,7 +24,7 @@ if __name__ == "__main__":
     X_test = vectorizer.transform(test_data)
 
     # Training
-    classifier = LogisticRegression(max_iter=500)
+    classifier = svm.LinearSVC()
     classifier.fit(X_train, train_labels)
 
     # Evaluation with dev

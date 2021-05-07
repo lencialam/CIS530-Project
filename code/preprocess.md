@@ -9,25 +9,25 @@ emoji + wordsegment + misc preprocessing
 * emoji
 * wordsegment
 
-## Score with CountVectorizer
+## Score with Baseline SVM
 
 ### Keep only alphanumeric characters
-The baseline development f1 score is: 0.6989256340018821
-The baseline testing f1 score is: 0.7122215334653552
+The baseline development f1 score is: 0.6963252859626121
+The baseline testing f1 score is: 0.6965725806451613
 
 ### Only segment tranlated emoji & hashtags
-The baseline development f1 score is: 0.6884154405256526
-The baseline testing f1 score is: 0.7291016795695866
+The baseline development f1 score is: 0.6960298906127418
+The baseline testing f1 score is: 0.719242541499638
 
-## Score with Google Pretrained Word2Vec
+## Score with Fine-tuned Bert
 
 ### Keep only alphanumeric characters
-The baseline development f1 score is: 0.6842459098413616
-The baseline testing f1 score is: 0.723913494117798
+The development f1 score is: 0.7625010105909936
+The testing f1 score is: 0.8119120163612839
 
 ### Only segment tranlated emoji & hashtags
-The baseline development f1 score is: 0.6739185522423332
-The baseline testing f1 score is: 0.6894279093562852
+The development f1 score is: 0.7717349751011322
+The testing f1 score is: 0.8162637377426447
 
 ## Referenced Paper
 ```
