@@ -10,16 +10,18 @@ We used the transformers package from Hugging Face which will give us a pytorch 
 
 ## Usage
 To run this baseline model:
-1. Download the needed data and store them in a folder named `data`.
-2. Upload the data to google colab, run the `BERT_model.ipynb`.
+1. Download the needed data.
+2. Upload the data files to google colab, run the `bert.ipynb`.
 3. On completion, it will print out the f1 score on both development set and testing set
 
 ## Model Description
 We use a BERT model with BERT Tokenizer, padding and masking techniques.
 
-## Score with BERT model 
+## Score with the BERT model
 
-optimizer = AdamW(model.parameters(),lr = 2e-5, eps = 1e-8)
+
+## Parameter Tuning
+optimizer = AdamW(model.parameters(), lr = 2e-5, eps = 1e-8)
 | optimizer | development | test
 | ------------- | ------------- | ------------- 
 |AdamW, lr = 1e-6, eps = 1e-8| 0.72 | 0.771(epoch=6)
@@ -30,10 +32,6 @@ optimizer = AdamW(model.parameters(),lr = 2e-5, eps = 1e-8)
 |AdamW, lr = 1e-4, eps = 1e-8 | 0.71 | 0.755
 |AdamW, lr = 1e-4, eps = 1e-6 | 0.71 | 0.734
 |AdamW, lr = 1e-4, eps = 1e-4 | 0.73 | 0.752
-
-
-##Score with 1 epoch
-AdamW, lr = 1e-5, eps=1e-8, 0.72, 0.729
 
 
 ## Cite

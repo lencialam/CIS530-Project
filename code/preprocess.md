@@ -1,4 +1,4 @@
-# Extension 1 - Preprocess
+# Extension 1 - Semantic Embeddings of Emoji and Hashtags
 emoji + wordsegment + misc preprocessing
 
 ## Required Libraries

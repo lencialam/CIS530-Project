@@ -11,20 +11,20 @@ The goal for our model is to assign a label (0, 1) to a sentence to classify it 
 ## Usage
 To run this baseline model:
 1. Download the needed data and store them in a folder named `data`.
-2. In the parent directory of `data`, run `python baseline.py` (or `python baseline_word2vec.py` for pretrained word2vec model).
+2. In the parent directory of `data`, run `python baseline.py` (or `python baseline_w2v.py` for pretrained word2vec model).
 3. On completion, it will print out the f1 score on testing set and generate a result file named `test_preds.txt`.
 4. You can also use `python score.py` to get the testing f1 score that compares this result file with the original labels.
 
 ## Model Description
-We use a simple Logistic Regression model with basic text preprocessing as our baseline. After getting the bag-of-words features, we experimented with two vectorization techniques - CountVectorizer and Google pretrained Word2Vec model.
+We use a simple Logistic Regression model as our baseline. After getting the bag-of-words features, we experimented with two vectorization techniques - CountVectorizer and Google pretrained Word2Vec model.
 
 ## Score with CountVectorizer
 
 ### Development Set
-The baseline development f1 score is: 0.6968686741773813
+The baseline development f1 score is: 0.6969226116319787
 
 ### Test Set
-The baseline testing f1 score is: 0.7155976554481942
+The baseline testing f1 score is: 0.7122054605714674
 
 ## Score with Google Pretrained Word2Vec
 
