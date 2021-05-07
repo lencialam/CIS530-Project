@@ -5,9 +5,17 @@ emoji + wordsegment + misc preprocessing
 * numpy
 * pandas
 * scikit-learn
-* gensim
 * emoji
 * wordsegment
+
+## Usage
+To run this baseline model:
+1. Download the needed data.
+2. Upload the data files to google colab, run the `bert.ipynb`.
+3. On completion, it will print out the f1 score on both development set and testing set
+
+To check out the scores:
+Use `python score.py preprocessed_bert_test_preds.txt` inside `output` folder to get the testing f1 score that compares this result file with the original labels.
 
 ## Score with Baseline SVM
 

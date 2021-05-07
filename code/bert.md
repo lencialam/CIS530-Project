@@ -6,13 +6,16 @@ We used the transformers package from Hugging Face which will give us a pytorch 
 * pandas
 * nltk
 * transformers
-* torch.utils.data
+* pytorch
 
 ## Usage
 To run this baseline model:
 1. Download the needed data.
 2. Upload the data files to google colab, run the `bert.ipynb`.
 3. On completion, it will print out the f1 score on both development set and testing set
+
+To check out the scores:
+Use `python score.py bert_test_preds.txt` inside `output` folder to get the testing f1 score that compares this result file with the original labels.
 
 ## Model Description
 We use a BERT model with BERT Tokenizer, padding and masking techniques.
