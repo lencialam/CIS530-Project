@@ -9,6 +9,11 @@ if __name__ == "__main__":
     majority = train_labels.mode()[0]
     print("Majority class is:", majority)   # OFF=0, NOT=1
 
+    # Ecaluate with Train
+    train_preds = [majority] * len(train_data)
+    train_fscore = f1_score(train_labels, train_preds, average='macro')
+    print("The simple baseline training f1 score is:", train_fscore)
+
     # Evaluation with dev
     dev_df = pd.read_csv('../data/dev.csv')
     dev_data, dev_labels = dev_df["tweet"], dev_df["class"]
