@@ -20,11 +20,8 @@ w2v = downloader.load('word2vec-google-news-300')
 def preprocess(tweet):
     tweet = tweet.lower()
     tweet = re.sub("@user", "", tweet)
-    tweet = re.sub(r"@[\w\-]+", "", tweet)
-    # tweet = re.sub(r"#[\w]+", " ", tweet)
     tweet = re.sub(r"[^A-Za-z]", " ", tweet)
-    # remove url
-    tweet = re.sub(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|''[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", "", tweet)
+    # tweet = re.sub("url", "", tweet) # remove url
     tokens = tweet.split(" ")
     tokens = [lemmatizer.lemmatize(token) for token in tokens]
     tokens = [token for token in tokens if token and not token in stop_words]
@@ -34,7 +31,6 @@ def preprocess(tweet):
     for token in tokens:
         if token in w2v:
             embedding += w2v[token]
-    embedding / float((len(tokens)))
     return embedding
 
 if __name__ == "__main__":
@@ -53,7 +49,7 @@ if __name__ == "__main__":
     # Creating the development corpus
     X_dev = pd.DataFrame(dev_data.apply(lambda x: preprocess(x)).tolist())
     # Creating the testing corpus
-    X_test = pd.DataFrame(test_data.apply(lambda x: prsseprocess(x)).tolist())
+    X_test = pd.DataFrame(test_data.apply(lambda x: preprocess(x)).tolist())
 
     # Training
     classifier = LogisticRegression(max_iter=500)
