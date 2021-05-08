@@ -21,9 +21,7 @@ def preprocess(tweet):
     # segment hashtag & emoji translations
     tokens = []
     for token in tweet.split(" "):
-        # # Remove all non-alphanumeric characters
-        # tokens += wordsegment.segment(token)
-        # Only deal with translated emoji & hashtags
+        # Only deal with translated emoji & hashtags, keep other non-alphanumeric characters
         if re.match(r"(:[a-z_-]+:)|(#[a-z]+)", token):
             tokens += wordsegment.segment(token)
         else:

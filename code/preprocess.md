@@ -1,5 +1,5 @@
-# Extension 1 - Semantic Embeddings of Emoji and Hashtags
-emoji + wordsegment + misc preprocessing
+# Extension 3 - Semantic Embeddings of Emoji and Hashtags
+For this extension, we tried to incorporate a preprocessing procedure that translates emoji into their natural language description, and segments hashtags into comprehensible phrases.
 
 ## Required Libraries
 * numpy
@@ -9,7 +9,16 @@ emoji + wordsegment + misc preprocessing
 * wordsegment
 
 ## Usage
-To run this baseline model:
+
+### Usage with Baseline SVM:
+To run the baseline model with the emoji & hashtag comprehension:
+1. Download the needed data and store them in a folder named `data` inside our directory.
+2. In the `code` directory, run `python preprocess_baseline.py`.
+3. On completion, it will print out the f1 score on testing set and generate a result file named `base_test_preds.txt` inside the `output` folder.
+4. You can also use `python score.py preprocess_base_test_preds.txt` to get the testing f1 score that compares this result file with the original labels.
+
+### Usage with BERT model
+To run the BERT model with the emoji & hashtag comprehension:
 1. Download the needed data.
 2. Upload the data files to google colab, run the `bert.ipynb`.
 3. On completion, it will print out the f1 score on both development set and testing set

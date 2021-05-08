@@ -1,4 +1,4 @@
-# BERT model
+# Extension 2 - BERT model
 We used the transformers package from Hugging Face which will give us a pytorch interface for working with BERT. In Hugging Face library, there are many powerful pytorch interface for working with BERT. Here, we choose to use BertForSequenceClassification.
 
 ## Required Libraries
@@ -9,7 +9,7 @@ We used the transformers package from Hugging Face which will give us a pytorch 
 * pytorch
 
 ## Usage
-To run this baseline model:
+To run this model:
 1. Download the needed data.
 2. Upload the data files to google colab, run the `bert.ipynb`.
 3. On completion, it will print out the f1 score on both development set and testing set

@@ -1,4 +1,4 @@
-# LSTM model
+# Extension 1 - LSTM model
 We designed a 5 layer LSTM model using GloVe_200d.
 
 ## Required Libraries
@@ -8,9 +8,9 @@ We designed a 5 layer LSTM model using GloVe_200d.
 * keras
 
 ## Usage
-To run this baseline model:
+To run this model:
 1. Download the needed data.
-2. Upload the data files to google colab, run the `GloVe_LSTM.ipynb`.
+2. Upload the data files to google colab, run the `lstm.ipynb`.
 3. On completion, it will print out the f1 score on both development set and testing set
 
 To check out the scores:

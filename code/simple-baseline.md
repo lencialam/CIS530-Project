@@ -2,7 +2,7 @@
 The goal for our model is to assign a label (0, 1) to a sentence to classify it has offensive language(0) or not(1) respectively.
 
 ## Usage
-To run this baseline model:
+To run this simple baseline model:
 1. Download the needed data and store them in a folder named `data` inside our directory.
 2. In the `code` directory, run `python simple-baseline.py`.
 3. On completion, it will print out the f1 score on testing set and generate a result file named `simple_base_test_preds.txt` inside the `output` folder.
